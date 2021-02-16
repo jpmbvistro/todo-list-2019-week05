@@ -25,14 +25,14 @@ document.querySelector('#add-task').addEventListener('click', addListen)
 stageTask()//Preadd first item
 document.querySelector('#reset-button').addEventListener('click', reset)
 document.querySelector('#clear-complete-button').addEventListener('click', clear)
-// document.querySelector
+
 
 /*
 Adds a new staged task if current staged task has content
 */
 function addListen(){
   let currentStaged =tasksHTML.querySelector('.stage')
-  let currentStagedContent = tasksHTML.querySelector('.stage .task')
+  let currentStagedContent = tasksHTML.querySelector('.stage .task-box')
   console.log(currentStagedContent)
   if (currentStagedContent.value.length>0){
     if (true) {
@@ -81,14 +81,14 @@ function stageTask() {
 
 
   let editButton = document.createElement('button')
-  editButton.classList.add('hover', 'edit')
+  editButton.classList.add('hover', 'edit', 'main-action')
   editButton.addEventListener('click', editTask)
   editButton.innerText = "EDIT"
 
 
   let textbox = document.createElement('input')
   textbox.setAttribute( 'type', 'text')
-  textbox.classList.add('task')
+  textbox.classList.add('task-box')
   textbox.setAttribute('placeholder', 'What should I do?')
   textbox.setAttribute('size', '30?')
   textbox.setAttribute('max-length', '30')
